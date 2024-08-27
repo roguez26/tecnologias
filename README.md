@@ -17,16 +17,16 @@ El propósito general del presente trabajo es crear un estándar de codificació
 
 ## Contenido
 
-[Reglas de nombrado](#reglas-de-nombrado)
-[Namespaces](#namespaces)
-[Estilo](#estilo)
-[Comentarios](#comentarios)
-[Estructuras de control](#estructuras-de-control)
-[Bucles](#bucles)
-[Manejo de excepciones](#manejo-de-excepciones)
-[Logueo de excepciones](#logueo-de-excepciones)
-[Prácticas seguras de construcción](#prácticas-seguras-de-construcción)
-[Referencias bibliográficas](#referencias-biliográficas)
+1. [Reglas de nombrado](#reglas-de-nombrado)
+2. [Namespaces](#namespaces)
+3. [Estilo](#estilo)
+4. [Comentarios](#comentarios)
+5. [Estructuras de control](#estructuras-de-control)
+6. [Bucles](#bucles)
+7. [Manejo de excepciones](#manejo-de-excepciones)
+8. [Logueo de excepciones](#logueo-de-excepciones)
+9. [Prácticas seguras de construcción](#prácticas-seguras-de-construcción)
+10. [Referencias bibliográficas](#referencias-biliográficas)
 
 ## Reglas de nombrado
 * Solo se puede declarar una variable por línea.
