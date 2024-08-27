@@ -26,7 +26,7 @@ El propósito general del presente trabajo es crear un estándar de codificació
 7. [Manejo de excepciones](#manejo-de-excepciones)
 8. [Logueo de excepciones](#logueo-de-excepciones)
 9. [Prácticas seguras de construcción](#prácticas-seguras-de-construcción)
-10. [Referencias bibliográficas](#referencias-biliográficas)
+10. [Referencias bibliográficas](#referencias-bibliográficas)
 
 ## Reglas de nombrado
 * Solo se puede declarar una variable por línea.
