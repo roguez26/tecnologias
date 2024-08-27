@@ -1,1 +1,4 @@
-# tecnologias
+### tecnologias
+
+## Introducción 
+El propósito del presente estándar es establecer un conjunto de reglas y guías que sirvan como pauta para la consistencia, claridad y calidad del código en el proyecto que se va a realizar durante el curso actual. Estas reglas fueron seleccionadas para facilitar la lectura, el mantenimiento y la seguridad del código, y al mismo tiempo, minimizar los errores y que se mejore la colaboración entre los desarrolladores. Este estándar cubre aspectos clave como el nombrado de variables, constantes, clases, métodos, propiedades y namespaces. Estilo e indentación, basados en la guia que Microsoft provee para el lenguaje C#; así como, el uso de comentarios, el uso correcto de estructuras de control, manejo de excepciones, niveles de logueo y prácticas seguras de construcción.
