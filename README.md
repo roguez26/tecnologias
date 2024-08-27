@@ -8,12 +8,36 @@ El propósito del presente estándar es establecer un conjunto de reglas y guía
 
 ### Propósito general
 
-El propósito general del presente trabajo es crear un estándar de codificación para el lenguaje de programación C# que sirva como guía para el equipo durante la construcción del proyecto de software “NOMBRE DEL PROYECTO”, asimismo, que permita a externos entender las reglas de estilo y decisiones de construcción que se tomaron.
+El propósito general del presente trabajo es crear un estándar de codificación para el lenguaje de programación C# que sirva como guía para el equipo durante la construcción del proyecto de software “NOMBRE DEL PROYECTO”, asimismo, que permita a externos entender las reglas de estilo y decisiones de construcción que se tomaron. El idioma del código será inglés.
 
 ### Propósitos específicos
 * Definir reglas claras y consistentes de sintaxis, nomenclatura y estilo para la codificación.
 * Fomentar la legibilidad y la comprensión del código.
 * Promover la coherencia y la calidad del código en todo el proyecto.
+
+## Estructura del estándar
+El presente estándar de codificación se encuentra estructurado de la siguiente forma:
+Propósito
+Sección donde se abarca el propósito general y específico por el cual se realiza el siguiente estándar.
+Reglas de nombrado
+Sección donde se abarcan las pautas que se tomaron para nombrar los diferentes elementos que se usarán dentro del código, como el nombrado de variables, clases, constantes, espacios de nombre (namespaces), etc. Por otra parte también se abordan los diferentes estilos utilizados en diferentes casos.
+Estilo
+Sección donde se aborda el estilo del código, incluyendo indentación, el uso de llaves de apertura y cierre, la longitud de líneas, las líneas y espacios en blancos. Mismo que ayuda a la legibilidad y entendimiento del código el cual permitirá a las personas entender de manera más clara el código escrito.
+Comentarios 
+En esta sección se abarca la manera de realizar comentarios adecuada que ha sido seleccionada para el presente estándar de codificación.
+Comentarios de documentación
+Explicación de comentarios de documentación destinados a explicar la funcionalidad de métodos, mismos que solo serán usados para exponer la funcionalidad de la interface del servicio utilizado y las clases que implementan esa interface.
+Estructuras de control
+Sección donde se ilustra la manera adecuada de utilizar estructuras de control según las buenas prácticas de Microsoft.
+Manejo de excepciones
+Sección donde se ahonda en la manera de manejar las excepciones usando y mostrando ejemplos correctos e incorrectos de como hacerlo.
+Niveles de errores 
+Para el manejo adecuado de excepciones se realizó una jerarquía de errores que serviran de guía para darle un manejo a cada dependiendo de su grado de gravedad.
+Logueo de excepciones 
+Asimismo, se utilizó una jerarquía de niveles de logging de Microsoft para realizar el registro de excepciones en una bitácora.
+Prácticas seguras de construcción  
+Sección donde se plasman diferentes prácticas y recomendaciones de construcción que tienen como finalidad fomentar la calidad, robustez y seguridad del código y que sirvan como guia para diferentes proyectos de C#.
+
 
 ## Contenido
 
@@ -563,6 +587,20 @@ catch (IOException exception)
     Console.WriteLine($"I/O error: {exception.Message}");
 } // No se liberan los recursos
 ```
+## Niveles de errores
+Se utilizarán los siguientes niveles de error para clasificar su grado de gravedad:
+
+* Fatal:
+Errores que causan que la aplicación se tenga que detener de manera inmediata. 
+Ejemplo: Fallo en la conexión a la base de datos principal
+
+* Error:
+Problemas graves que afecten la funcionalidad, pero que no detienen la aplicación por completo. 
+Ejemplo: Error al guardar un registro en la base de datos, pero la aplicación sigue operando
+
+* Warning:
+Situaciones que podrían llevar a un error en el futuro. No impiden el funcionamiento del código, pero son indicativos de posibles problemas.
+Ejemplo: Entradas de datos inválidas que aún permiten continuar con la ejecución, pero podrían causar problemas si no se corrigen.
 
 ## Logueo de excepciones 
 Se utilizará la librería “log4net” para llevar el registro de la bitácora de excepciones. Se debe respetar el nivel de log de la siguiente tabla:
@@ -578,7 +616,9 @@ Se utilizará la librería “log4net” para llevar el registro de la bitácora
 ## Prácticas seguras de construcción 
 * Validación de entradas: Se deben validar todas las entradas del usuario para evitar inyección de código, se validará para cada tipo de dato.
 * Manejo adecuado de excepciones: Se deben de atrapar las excepciones específicas para el caso que se necesite y manejarla de acuerdo a la jerarquía de excepciones especificado en la sección “Niveles de errores”.
-* Priorizar evitar las excepciones en lugar de atraparlas.
+* Priorizar programar de manera en que se pueda evitar excepciones, en lugar de centrarse en atraparlas. 
+    * Ejemplo correcto: Usar arreglos y utilizar validaciones para evitar un índice fuera del rango del tamaño del arreglo.
+    * Ejemplo incorrecto: No realizar validaciones y atrapar una excepción de tipo IndexOutOfRangeException
 * Manejar de manera correcta los recursos, liberarlos después de utilizarlos ya sea utilizando “using” o “finally”.
 * Seguridad de datos sensibles, se utilizarán tecnologías de cifrado para protegerlos. Por otra parte, se deben de guardar en archivos de configuración separados.
 * Implementar pruebas unitarias, cada método debe estar probado con al menos un caso exitoso y dos fallidos.
