@@ -17,5 +17,22 @@ El propósito general del presente trabajo es crear un estándar de codificació
 
 ### Reglas de nombrado
 * Se utilizará la convención de nombrado PascalCase/UpperCamelCase para el nombramiento de **clases**, **interfaces**, **structs**, **delegates**, **constantes** y **nombres de métodos**
-* Ejemplo correcto:
-* `public class CustomerManager`
+
+Ejemplo correcto:
+`public class CustomerManager`
+Ejemplo incorrecto:
+`public class customerManager`
+
+* Se utilizará la convención de nombrado camelCase para el nombramiento de parámetros de los métodos y variables locales.
+Ejemplo correcto:
+`public void ProcessOrder(int orderId, string customerName)
+{
+    int totalItems = 5; 
+    double totalPrice = 99.99;
+}`
+Ejemplo incorrecto:
+`public void ProcessOrder(int OrderId, string CustomerName)  
+{
+    int TotalItems = 5;
+    double TotalPrice = 99.99; 
+}`
