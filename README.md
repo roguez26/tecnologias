@@ -15,7 +15,20 @@ El propósito general del presente trabajo es crear un estándar de codificació
 * Fomentar la legibilidad y la comprensión del código.
 * Promover la coherencia y la calidad del código en todo el proyecto.
 
-### Reglas de nombrado
+## Contenido
+
+[Reglas de nombrado](#reglas-de-nombrado)
+[Namespaces](#namespaces)
+[Estilo](#estilo)
+[Comentarios](#comentarios)
+[Estructuras de control](#estructuras-de-control)
+[Bucles](#bucles)
+[Manejo de excepciones](#manejo-de-excepciones)
+[Logueo de excepciones](#logueo-de-excepciones)
+[Prácticas seguras de construcción](#prácticas-seguras-de-construcción)
+[Referencias bibliográficas](#referencias-biliográficas)
+
+## Reglas de nombrado
 * Solo se puede declarar una variable por línea.
 * Se utilizará la convención de nombrado PascalCase/UpperCamelCase para el nombramiento de **clases**, **interfaces**, **structs**, **delegates**, **constantes** y **nombres de métodos**
 
@@ -142,7 +155,7 @@ Ejemplo incorrecto:
 List<int> number = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 ```
 
-###Namespaces
+## Namespaces
 * Evitar nombres genéricos
 
 Ejemplo correcto: `TreeNode`
@@ -163,11 +176,11 @@ Ejemplo incorrecto: `System.IO ya existe `
 * Evitar conflictos con nombres de tipos entre namespaces tecnológicos y modelos de aplicación, si se desarrolla una tecnología que podría usarse en un modelo de aplicación evitar usar nombres que ya existan en ese namespace
 
 
-### Estilo
-#### Indentación
+## Estilo
+### Indentación
 * Se deben de utilizar cuatro espacios como unidad de indentación.
 * El patrón de indentación debe de seguirse en todo el código, sin excepciones.
-#### Llaves de apertura y cierre
+### Llaves de apertura y cierre
 * La llave de apertura se debe de colocar en la línea debajo de la declaración de la estructura, alineado al mismo nivel de indentado.
 * Tanto las llaves de aperturas como las de cierre deben estar en una línea separada y alineadas al indentado de la estructura a la que pertenecen.
 * Toda declaración o estructura de control debe contener llaves, independientemente del número de líneas de código que contengan.
@@ -185,10 +198,10 @@ if (orderCount > 0)
     Console.WriteLine("Processing order..."); 
 
 ```
-#### Longitud de líneas
+### Longitud de líneas
 * Se deben evitar líneas de código de más de 120 caracteres.
   
-#### Espacios en blanco
+### Espacios en blanco
 Se debe de usar un espacio en blanco en los siguientes casos:
 Antes y después de un operador, a excepción de operadores unarios y el “.”.
   
@@ -306,10 +319,10 @@ public class Example
     }
 }
 ```
-### Comentarios
+## Comentarios
 Evitar el uso de comentarios en la misma línea para explicar el código, el buen código es autoexplicativo.
 
-#### Comentarios en bloque
+### Comentarios en bloque
 Se utilizará el formato “/*  */” para realizar comentarios que necesiten más de una línea de código.
 Ejemplo correcto:
 ```
@@ -324,7 +337,7 @@ Ejemplo incorrecto:
 * El bucle for se utiliza en lugar de foreach para evitar la sobrecarga 
 * /
 ```
-#### Comentarios de línea
+### Comentarios de línea
 Se utilizará el formato “//” para realizar comentarios que solamente necesiten de una línea de código.
 
 Ejemplo correcto:
@@ -336,7 +349,7 @@ Ejemplo incorrecto:
 // La función retornará el valor final del objeto
 // Los parámetros que se necesitan es el precio y el descuento
 ```
-#### Comentarios de documentación 
+### Comentarios de documentación 
 Solo se utilizaran para la interface que expone la funcionalidad del servicio y las clases que implementan esa interface.
 Se deben utilizar comentarios de C# con etiquetas XML internas y seguir las siguientes directivas:
 * Las líneas deben ser precedidas por “///” para ser aceptadas como comentarios XML.
@@ -363,9 +376,9 @@ Ejemplo de varias líneas:
 /// </code> 
 /// </example>
 ```
-### Estructuras de control
+## Estructuras de control
 * Todas las estructuras de control deben tener al menos una línea de código dentro de estas, asimismo, se debe de utilizar “{}” incluso si solo hay una instrucción que sigue a la estructura de control
-#### If
+### If
 * La palabra reservada “If” debe estar en una línea separada 
 * La palabra reservada “If” debe estar separada de la condición por un espacio en blanco 
 
@@ -385,7 +398,7 @@ Ejemplo incorrecto:
 if(condición)
     // código
 ```
-#### Switch 
+### Switch 
 * Siempre se debe incluir un caso “Default” para manejar valores inesperados.
 * La expresión dentro del switch debe ser una variable o expresión que se pueda evaluar.
 * Cada “case” debe terminar con “break”, “return”, “continue” o “goto”.
@@ -442,8 +455,8 @@ switch (dayNumber)
         Console.WriteLine("Invalid day number"); break;
 }
 ```
-### Bucles
-#### For
+## Bucles
+### For
 * La palabra “for” y los paréntesis deben estar separados por un espacio y las expresiones en un bucle for deberán estar separadas por espacios en blanco.
 * La llave de apertura se coloca en la siguiente línea y la primera instrucción se coloca en la línea posterior a esta.
 
@@ -460,7 +473,7 @@ for (int i=0;i<10;i++)
 {
 System.out.println(i);}
 ```
-#### While
+### While
 * La palabra reservada “while” debe aparecer en su propia línea, seguida inmediatamente por la expresión condicional, misma que deberá estar separada por un espacio.
 * La llave de apertura se coloca en la siguiente línea y la primera instrucción se coloca en la línea posterior a esta.
 * La llave de cierre comienza en una nueva línea, indentada para que coincida con su declaración de apertura correspondiente.
@@ -478,7 +491,7 @@ while(true){
     // código 
 }
 ```
-#### Do-While
+### Do-While
 * La palabra reservada “do” debe aparecer en su propia línea, en la siguiente línea se debe colocar la llave de apertura.
 Posterior a la llave de apertura se deben de colocar las instrucciones en una línea nueva.
 * En una línea nueva después de las instrucciones se debe colocar la llave de cierre, seguido de un espacio y la condición de salida.
@@ -497,7 +510,7 @@ do{
 while(true);
 ```
 
-### Manejo de excepciones
+## Manejo de excepciones
 * Usar un bloque try en las líneas de código que puedan tirar una excepción.
 * Siempre incluir un bloque catch después de un bloque try si se espera una excepción.
 * Solo usar excepciones que puedan ser atrapadas apropiadamente, evitar el uso de excepciones genéricas.
@@ -551,7 +564,7 @@ catch (IOException exception)
 } // No se liberan los recursos
 ```
 
-### Logueo de excepciones 
+## Logueo de excepciones 
 Se utilizará la librería “log4net” para llevar el registro de la bitácora de excepciones. Se debe respetar el nivel de log de la siguiente tabla:
 
 | Nivel de logueo | Valor | Descripción                                                                                                                                                       |
@@ -562,7 +575,7 @@ Se utilizará la librería “log4net” para llevar el registro de la bitácora
 | **Warning**     | 3     | **Por eventos anormales o inesperados. Por lo general, incluye errores o condiciones que no hacen que se produzca un error en la aplicación.**                    |
 | **Error**       | 4     | **Para errores y excepciones que no se pueden controlar. Estos mensajes indican un error en la operación o solicitud actual, no un error en toda la aplicación.** |
 | **Critical**    | 5     | **Para fallos que requieren atención inmediata.**                                                                                                                 |
-### Prácticas seguras de construcción 
+## Prácticas seguras de construcción 
 * Validación de entradas: Se deben validar todas las entradas del usuario para evitar inyección de código, se validará para cada tipo de dato.
 * Manejo adecuado de excepciones: Se deben de atrapar las excepciones específicas para el caso que se necesite y manejarla de acuerdo a la jerarquía de excepciones especificado en la sección “Niveles de errores”.
 * Priorizar evitar las excepciones en lugar de atraparlas.
@@ -573,21 +586,10 @@ Se utilizará la librería “log4net” para llevar el registro de la bitácora
 * Permisos de acceso a la base de datos, utilizar usuarios con diferentes niveles de permisos de acuerdo a su nivel de acceso en el sistema.
 * Número de parámetros en los métodos: Se recomienda utilizar tres parámetros en la firma de los métodos para disminuir la carga cognitiva en el lector, sin embargo, se pueden utilizar más conforme se vea necesario. 
 
-### Referencias bibliográficas 
-Microsoft. (2022). Coding guidelines. Microsoft Learn. https://learn.microsoft.com/en-us/mixed-reality/world-locking-tools/documentation/howtos/codingconventions
-Microsoft. (2023). C# identifier naming rules and conventions. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/identifier-names
-Microsoft. (2023). Exception handling in C#. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/exceptions/exception-handling
-Microsoft. (2023). Statements. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/statements-expressions-operators/statements
-Microsoft. (2024). Logging in .NET Core. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/core/extensions/logging?tabs=command-line
-Microsoft. (2024). Use whitespace to improve readability. Microsoft Learn. https://learn.microsoft.com/en-us/training/modules/csharp-readable-code/4-exercise-use-whitespace
-
-
-
-
-
-
-
-
-
-
-
+## Referencias bibliográficas 
+* Microsoft. (2022). Coding guidelines. Microsoft Learn. https://learn.microsoft.com/en-us/mixed-reality/world-locking-tools/documentation/howtos/codingconventions
+* Microsoft. (2023). C# identifier naming rules and conventions. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/identifier-names
+* Microsoft. (2023). Exception handling in C#. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/exceptions/exception-handling
+* Microsoft. (2023). Statements. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/statements-expressions-operators/statements
+* Microsoft. (2024). Logging in .NET Core. Microsoft Learn. https://learn.microsoft.com/en-us/dotnet/core/extensions/logging?tabs=command-line
+* Microsoft. (2024). Use whitespace to improve readability. Microsoft Learn. https://learn.microsoft.com/en-us/training/modules/csharp-readable-code/4-exercise-use-whitespace
