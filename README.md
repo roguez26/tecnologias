@@ -31,8 +31,10 @@ Ejemplo correcto:
     double totalPrice = 99.99;
 }`
 Ejemplo incorrecto:
-`public void ProcessOrder(int OrderId, string CustomerName)  
+```
+public void ProcessOrder(int OrderId, string CustomerName)  
 {
     int TotalItems = 5;
     double TotalPrice = 99.99; 
-}`
+}
+```
