@@ -17,6 +17,5 @@ El propósito general del presente trabajo es crear un estándar de codificació
 
 ### Reglas de nombrado
 * Se utilizará la convención de nombrado PascalCase/UpperCamelCase para el nombramiento de **clases**, **interfaces**, **structs**, **delegates**, **constantes** y **nombres de métodos**
-Ejemplo correcto:
-
-`public class CustomerManager`
+* Ejemplo correcto:
+* `public class CustomerManager`
